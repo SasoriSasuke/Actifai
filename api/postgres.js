@@ -31,7 +31,7 @@ async function getUserInfo(userId) {
 		userGroupSet.add(userInfoResult.rows[i].group_name);
 	}
 	
-	let response = {name:userName, role:userRole, group:JSON.stringify(Array.from(userGroupSet))};
+	let response = {name:userName, role:userRole, group:Array.from(userGroupSet)};
 	
 	return JSON.stringify(response);
 }
