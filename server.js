@@ -2,7 +2,7 @@
 
 const express = require('express');
 const seeder = require('./seed');
-const postgre = require('./api/postgre');
+const postgres = require('./api/postgres');
 
 // Constants
 const PORT = 3000;
@@ -26,7 +26,7 @@ async function start() {
 	   let userId = parseInt(req.params.userId);
 	   
 	   if(Number.isSafeInteger(userId)) {
-		   postgre.getUserInfo(userId).then(function(userInfoResult){
+		   postgres.getUserInfo(userId).then(function(userInfoResult){
 			   res.end(userInfoResult);
 		   });
 	   }
@@ -40,7 +40,7 @@ async function start() {
 	   let userId = parseInt(req.params.userId);
 	   
 	   if(Number.isSafeInteger(userId)) {
-		   postgre.getUserSales(userId).then(function(userSalesResult){
+		   postgres.getUserSales(userId).then(function(userSalesResult){
 			   res.end(userSalesResult);
 		   });
 	   }
